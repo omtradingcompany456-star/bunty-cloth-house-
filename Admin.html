@@ -1,0 +1,24 @@
+<script>
+function login(){
+
+let username = document.getElementById("user").value;
+let password = document.getElementById("pass").value;
+
+const admins = [
+  {user: "MAYANK", pass:"9253588401"},
+  {user: "BUNTY", pass:"9466682600"},
+  {user: "SOURABH", pass:"7015717772"},
+  {user: "GOURAV", pass:"9036149000"}
+];
+
+const valid = admins.some(
+  admin => admin.user === username && admin.pass === password
+);
+
+if(valid){
+  window.location.href = "dashboard.html";
+}else{
+  alert("Wrong Username or Password");
+}
+}
+</script>
