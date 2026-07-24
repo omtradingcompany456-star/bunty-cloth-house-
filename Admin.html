@@ -124,7 +124,6 @@ admin =>
 admin.user === username &&
 admin.pass === password
 );
-
 if(valid){
 
 localStorage.setItem(
@@ -132,14 +131,11 @@ localStorage.setItem(
 username
 );
 
-window.location.href =
-"dashboard.html";
+alert("Login Successful");
 
 }else{
 
-alert(
-"Wrong Username or Password"
-);
+alert("Wrong Username or Password");
 
 }
 
