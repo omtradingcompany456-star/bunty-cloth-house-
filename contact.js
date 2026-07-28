@@ -1,10 +1,14 @@
-const mongoose = require("mongoose");
+const express = require("express");
+const router = express.Router();
+const Contact = require("../models/Contact");
 
-const contactSchema = new mongoose.Schema({
-    name: String,
-    phone: String,
-    email: String,
-    message: String
-}, { timestamps: true });
+router.post("/", async (req, res) => {
+    const contact = new Contact(req.body);
+    await contact.save();
 
-module.exports = mongoose.model("Contact", contactSchema);
+    res.json({
+        message: "Message Saved"
+    });
+});
+
+module.exports = router;
