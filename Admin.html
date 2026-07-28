@@ -89,58 +89,50 @@ Bunty Cloth House Admin Panel
 
 function login(){
 
-let username =
-document.getElementById("user").value;
-
-let password =
-document.getElementById("pass").value;
+let username = document.getElementById("user").value;
+let password = document.getElementById("pass").value;
 
 const admins = [
-
 {
 user:"Mayank",
 pass:"9253588401"
 },
-
 {
 user:"Bunty",
 pass:"9466682600"
 },
-
 {
 user:"Sourabh",
 pass:"7015717772"
 },
-
 {
 user:"Gourav",
 pass:"9036149000"
 }
-
 ];
 
 const valid = admins.some(
-admin =>
-admin.user === username &&
-admin.pass === password
+admin => admin.user === username && admin.pass === password
 );
+
 if(valid){
 
-localStorage.setItem(
-"admin",
-username
-);
+    localStorage.setItem("admin", username);
 
-alert("Login Successful");
+    alert("Login Successful");
 
-}else{
+    setTimeout(function(){
+        window.location.href = "./dashboard.html";
+    },500);
 
-alert("Wrong Username or Password");
+}
+else{
+
+    alert("Wrong Username or Password");
 
 }
 
 }
-
 </script>
 
 </body>
